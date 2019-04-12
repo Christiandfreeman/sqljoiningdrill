@@ -1,0 +1,13 @@
+SELECT 
+	trips.start_station , MAX(trips.duration)
+	zip , weather.events
+FROM 
+		trips
+JOIN 
+	weather 
+ON
+	trips.zip_code = weather.zip
+WHERE events ='Rain'
+GROUP BY 1,3
+LIMIT 3;
+
